@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%=title;%></title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/react.js" crossorigin></script>
+    <script type="text/javascript" src="socket.js"></script>
+    <script type="text/javascript">
+        var node = io.connect( 'http://'+window.location.hostname+':3000');
+        node.on('chat', function(data){
+            var ct = document.getElementById('address');
+            ct.value = ct.value+'\n'+data.message;
+        });
+        $(document).ready(function () {
+            $('#user-submit').click(function () {
+                var payload = {
+                    name: $('#user-name').val(),
+                    address: $('#address').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val()
+                }
+                $.ajax({
+                    url: "/users",
+                    type: "POST",
+                    contentType: "application/json",
+                    processData: false,
+                    data: JSON.stringify(payload),
+                    complete: function (data) {
+                        $('#output').html(data.responseText);
+                    }
+                });
+            });
+        });
+
+        function bs(a, k){
+            var l = 0, r = a.length -1, m;
+            while(l <= r){
+                m = parseInt((l + r) / 2);
+                if(k == a[m])
+                    return m;
+                else if(k < a[m])
+                    r = m - 1;
+                else
+                    l = m + 1;
+            }
+            return -1;
+        }
+    </script>
+  </head>
+  <body>
+    <div id="like_button_container"></div>
+    <% include header %>
+    <h3>Enter a username to enter into the database:</h3>
+    <input id="user-name" type="text" />
+    <textarea id="address"></textarea>
+    <input id="email" type="email" />
+    <input id="phone" type="number" />
+    <input id="user-submit" type="submit" />
+    <p id="output"></p>
+    <script type="text/javascript">
+        const domContainer = document.querySelector('#like_button_container');
+        var hiu = React.createElement('a', {href: '#'}, 'hello');
+        ReactDOM.render(hiu, domContainer);
+    </script>
+  </body>
+</html>
