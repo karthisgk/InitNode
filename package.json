@@ -1,0 +1,30 @@
+{
+  "name": "showing-online-users-using-nodejs-socket-io",
+  "version": "2.0.0",
+  "description": "Showing online users using Nodejs and Socket.io",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Showing",
+    "online",
+    "users",
+    "using",
+    "Nodejs",
+    "and",
+    "Socket.io"
+  ],
+  "author": "Shashank Tiwari",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mysql": "^2.15.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "socket.io": "^2.0.4"
+  }
+}
