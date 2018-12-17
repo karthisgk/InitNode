@@ -7,7 +7,7 @@
     <script src="assets/js/react.js" crossorigin></script>
     <script type="text/javascript" src="socket.js"></script>
     <script type="text/javascript">
-        var node = io.connect( 'http://52.66.77.98:5000');
+        var node = io.connect( 'http://52.66.77.98/');
         node.on('chat', function(data){
             var ct = document.getElementById('address');
             ct.value = ct.value+'\n'+data.message;

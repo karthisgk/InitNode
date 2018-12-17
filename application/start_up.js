@@ -14,7 +14,7 @@ app.use(main_config.initRoutes());
 
 var server  = require('http').createServer(app);
 main_config.initServerSocket(server);
-server.listen(config.port, '0.0.0.0');
+server.listen(config.port, '127.0.0.1');
 console.log("server listening at "+config.port);
 
 
