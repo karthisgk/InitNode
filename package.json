@@ -1,22 +1,21 @@
 {
-  "name": "showing-online-users-using-nodejs-socket-io",
+  "name": "initnode",
   "version": "2.0.0",
-  "description": "Showing online users using Nodejs and Socket.io",
-  "main": "server.js",
+  "description": "In Node Js, Basic Routes,Socket and MongoDb configuration and its Module",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "initnode"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthisgk/InitNode.git"
   },
   "keywords": [
-    "Showing",
-    "online",
-    "users",
-    "using",
-    "Nodejs",
-    "and",
-    "Socket.io"
+    "nodejs",
+    "mongo"
   ],
-  "author": "Shashank Tiwari",
-  "license": "MIT",
+  "author": "karthisgk",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.5.7",
@@ -26,5 +25,9 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "socket.io": "^2.0.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/karthisgk/InitNode/issues"
+  },
+  "homepage": "https://github.com/karthisgk/InitNode#readme"
 }
