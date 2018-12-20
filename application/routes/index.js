@@ -4,7 +4,7 @@ function Routes(app){
 	self.db = require('../config').db;
 	app.get('/', function(req, res) {
 		self.db.get('user', {name: "karthi"}, function(data){
-			res.render('index', {title: data[0]._id});
+			res.render('index', {data : data});
 		});
 	});
 

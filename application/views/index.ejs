@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title><%=title;%></title>
+    <title><%=data[0].name;%></title>
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script src="assets/js/react.js" crossorigin></script>
@@ -32,20 +32,6 @@
                 });
             });
         });
-
-        function bs(a, k){
-            var l = 0, r = a.length -1, m;
-            while(l <= r){
-                m = parseInt((l + r) / 2);
-                if(k == a[m])
-                    return m;
-                else if(k < a[m])
-                    r = m - 1;
-                else
-                    l = m + 1;
-            }
-            return -1;
-        }
     </script>
   </head>
   <body>
