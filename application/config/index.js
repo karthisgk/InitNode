@@ -1,5 +1,5 @@
 
-var db = require('./db');
+var DB = require('./db');
 
 var main = {
 	development: {
@@ -10,7 +10,7 @@ var main = {
 		name: 'Node App',
 		port: process.env.PORT || 5000
 	},
-	db: db,
+	db: new DB(),
 	initApp: function(dir){
 		main.app_dir = dir;
 		return main;
