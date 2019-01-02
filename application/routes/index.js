@@ -11,6 +11,9 @@ function Routes(app){
 	app.post('/users', function (req, res) {
 	    
 	});
+	app.get('/session', function(req, res) {
+		res.send(JSON.stringify(req.session));
+	});
 	self.r = app;
 }
 
