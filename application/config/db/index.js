@@ -41,7 +41,7 @@ DB.prototype.insert = function(tbName, data, cb) {
 DB.prototype.update = function(tbName, wh, data, cb){
 	this.connect(function(db){
 		if(typeof data.length === "undefined"){
-			db.collection(tbName).updateOne(data, wh, function(err, r){
+			db.collection(tbName).updateOne(wh, {$set: data}, function(err, r){
 				assert.equal(null, err);
       			assert.equal(1, r.matchedCount);
       			assert.equal(1, r.modifiedCount);
@@ -52,7 +52,7 @@ DB.prototype.update = function(tbName, wh, data, cb){
 				cb('Empty data', {});
 				return;
 			}
-			db.collection(tbName).updateMany(data, wh, function(err, r){
+			db.collection(tbName).updateMany(wh, {$set: data}, function(err, r){
 				assert.equal(null, err);
       			assert.equal(1, r.matchedCount);
       			assert.equal(1, r.modifiedCount);
