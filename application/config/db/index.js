@@ -45,19 +45,6 @@ DB.prototype.insert = function(tbName, data, cb) {
 DB.prototype.update = function(tbName, wh, data, cb){
 	this.connect(function(db){
 		if(typeof data.length === "undefined"){
-			db.collection(tbName).updateOne(wh, {$set: data}, function(err, r){
-				if(err){
-					assert.equal(null, err);
-	      			assert.equal(1, r.matchedCount);
-	      			assert.equal(1, r.modifiedCount);
-	      		}
-      			cb(err, r);
-			});
-		}else{
-			if(data.length <= 0){
-				cb('Empty data', {});
-				return;
-			}
 			db.collection(tbName).updateMany(wh, {$set: data}, function(err, r){
 				if(err){
 					assert.equal(null, err);
