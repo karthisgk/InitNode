@@ -25,7 +25,7 @@
     "mongodb": "^2.2.36",
     "mysql": "^2.15.0",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.4.2",
     "socket.io": "^2.0.4"
   },
   "bugs": {
